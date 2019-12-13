@@ -14,6 +14,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.zip.Inflater;
 
@@ -43,6 +44,7 @@ public class list_fragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_list_fragment, container, false);
         this.context = inflater.getContext();
         String[] names = new String[Profile.AllProfiles.size()];
+        listenerO = (FragmentListener) context;
 
         for (int i = 0; i< names.length; i++){
             names[i] = Profile.AllProfiles.get(i).name;
@@ -55,10 +57,13 @@ public class list_fragment extends Fragment {
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
+                Toast.makeText(context, "ppppppaaaaaaaaaaaaa", Toast.LENGTH_SHORT).show();
+                if (listenerO != null){
+                    listenerO.showProfile(position);
+                }
             }
         });
-        
+
         return v;
     }
 
@@ -73,6 +78,7 @@ public class list_fragment extends Fragment {
                 public void onClick(View v) {
 
                     Intent i = new Intent(context, UserForm.class);
+                    i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(i);
 
                 }
