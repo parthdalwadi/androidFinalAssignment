@@ -29,8 +29,6 @@ public class UserForm extends AppCompatActivity {
 
     public void saveUserdata(View v){
 
-
-
         Profile p = new Profile(u_name.getText().toString(), u_email.getText().toString(), u_phone.getText().toString(),1);
 
         Profile.AllProfiles.add(p);

@@ -43,21 +43,14 @@ public class list_fragment extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_list_fragment, container, false);
         this.context = inflater.getContext();
-        String[] names = new String[Profile.AllProfiles.size()];
         listenerO = (FragmentListener) context;
-
-        for (int i = 0; i< names.length; i++){
-            names[i] = Profile.AllProfiles.get(i).name;
-
-        }
-        ArrayAdapter adapter = new ArrayAdapter(context, android.R.layout.simple_expandable_list_item_1, names);
+        ProfileAdapter adapter = new ProfileAdapter(context, R.layout.layout_profile, Profile.AllProfiles);
         ListView list = v.findViewById(R.id.profileList);
         list.setAdapter(adapter);
 
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(context, "ppppppaaaaaaaaaaaaa", Toast.LENGTH_SHORT).show();
                 if (listenerO != null){
                     listenerO.showProfile(position);
                 }
