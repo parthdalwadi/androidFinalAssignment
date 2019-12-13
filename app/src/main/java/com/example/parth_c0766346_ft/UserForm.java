@@ -29,11 +29,15 @@ public class UserForm extends AppCompatActivity {
 
     public void saveUserdata(View v){
 
-        Profile p = new Profile(u_name.getText().toString(), u_email.getText().toString(), u_phone.getText().toString(),1);
+        Random rint = new Random();
+
+
+        Profile p = new Profile(u_name.getText().toString(), u_email.getText().toString(),
+                u_phone.getText().toString(),1 + rint.nextInt(30));
 
         Profile.AllProfiles.add(p);
 
-        Intent i = new Intent(this, MainActivity.class);
+        Intent i = new Intent(this, Verification.class);
         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(i);
 
