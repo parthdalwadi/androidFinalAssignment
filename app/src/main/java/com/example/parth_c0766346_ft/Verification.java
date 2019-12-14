@@ -1,7 +1,9 @@
 package com.example.parth_c0766346_ft;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -89,26 +91,48 @@ public class Verification extends AppCompatActivity {
                     
                 }
 
-
+                AlertDialog.Builder alertDialog = new AlertDialog.Builder(Verification.this);
                 if(trueCount == 4 && checkedCount == 4 && robotC.isChecked() ){
 
 
-                Intent ir = getIntent();
-                Profile p = (Profile) ir.getSerializableExtra("object");
 
-                Profile.AllProfiles.add(p);
-                    Toast.makeText(Verification.this, "Profile Saved successfull", Toast.LENGTH_SHORT).show();
+                    alertDialog.setTitle("Varified");
+                    alertDialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            Intent ir = getIntent();
+                            Profile p = (Profile) ir.getSerializableExtra("object");
+
+                            Profile.AllProfiles.add(p);
+
+                            Intent i = new Intent(Verification.this, MainActivity.class);
+                            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            startActivity(i);
+                        }
+                    });
+                    alertDialog.show();
+
+
+
+                    //Toast.makeText(Verification.this, "Profile Saved successfull", Toast.LENGTH_SHORT).show();
 
                 }
                 else {
-
-                    Toast.makeText(Verification.this, "sorry !! something is wrong.", Toast.LENGTH_SHORT).show();
+                    alertDialog.setTitle("Not Varified");
+                    alertDialog.setNegativeButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            Intent i = new Intent(Verification.this, MainActivity.class);
+                            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            startActivity(i);
+                        }
+                    });
+                    alertDialog.show();
+                    //Toast.makeText(Verification.this, "sorry !! something is wrong.", Toast.LENGTH_SHORT).show();
 
                 }
 
-                Intent i = new Intent(Verification.this, MainActivity.class);
-                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(i);
+
             }
 
 

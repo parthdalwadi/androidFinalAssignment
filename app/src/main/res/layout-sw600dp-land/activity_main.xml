@@ -5,7 +5,7 @@
 
 
     <fragment
-        android:layout_width="300dp"
+        android:layout_width="400dp"
         android:layout_height="match_parent"
         android:id="@+id/f_list"
         android:name="com.example.parth_c0766346_ft.list_fragment"/>

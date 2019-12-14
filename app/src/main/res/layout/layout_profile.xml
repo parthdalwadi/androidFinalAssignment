@@ -25,6 +25,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginTop="57dp"
         android:text="Parth Dalwadi"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/photo"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -43,7 +44,7 @@
         android:id="@+id/number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="16dp"
         android:text="1234567890"
         app:layout_constraintStart_toStartOf="@+id/email"
         app:layout_constraintTop_toBottomOf="@+id/email" />

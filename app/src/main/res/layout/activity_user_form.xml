@@ -8,39 +8,53 @@
     tools:context=".UserForm">
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:text="provide your information"
+        android:layout_margin="40dp"
+        android:textStyle="italic|bold"
+        android:layout_gravity="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:gravity="center_horizontal"/>
 
     <EditText
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:hint="name"
+        android:gravity="center"
+        android:layout_gravity="center"
         android:inputType="text"
         android:id="@+id/name"/>
 
 
     <EditText
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
+        android:layout_gravity="center"
         android:layout_height="wrap_content"
         android:hint="email"
+        android:gravity="center"
         android:inputType="text"
         android:id="@+id/email"/>
 
     <EditText
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:hint="phone"
+        android:gravity="center"
+        android:layout_gravity="center"
         android:inputType="number"
         android:id="@+id/phone"/>
 
     <Button
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:id="@+id/save"
         android:onClick="saveUserdata"
-        android:text="save"/>
+        android:layout_marginTop="20dp"
+        android:text="SAVE"
+        android:textColor="#fff"
+        android:background="#090"/>
 
 
 

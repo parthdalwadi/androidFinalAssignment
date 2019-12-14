@@ -34,7 +34,7 @@ public class UserForm extends AppCompatActivity {
         Random rint = new Random();
 
 
-        if (u_name.getText().toString() == "" || u_email.getText().toString() == "" || u_phone.getText().toString() == "") {
+        if (u_name.getText().toString().isEmpty() || u_email.getText().toString().isEmpty() || u_phone.getText().toString().isEmpty()) {
 
             Toast.makeText(this, "Please provide all the details", Toast.LENGTH_SHORT).show();
 

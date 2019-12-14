@@ -19,8 +19,9 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="parth Dalwadi"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:hint="John Roy"
+        android:textSize="30sp"
+        android:textStyle="bold"
         android:gravity="center"
         android:layout_marginTop="20dp"
         android:id="@+id/p_name"/>
@@ -28,7 +29,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="pbdalwadi@gmail.com"
+        android:hint="john@email.com"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:gravity="center"
         android:layout_marginTop="20dp"
@@ -37,7 +38,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="1234567890"
+        android:hint="1234567890"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:gravity="center"
         android:layout_marginTop="20dp"
