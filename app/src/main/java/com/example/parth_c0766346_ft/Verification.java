@@ -88,16 +88,27 @@ public class Verification extends AppCompatActivity {
                     }
                     
                 }
-                
+
+
                 if(trueCount == 4 && checkedCount == 4 && robotC.isChecked() ){
-                    
+
+
+                Intent ir = getIntent();
+                Profile p = (Profile) ir.getSerializableExtra("object");
+
+                Profile.AllProfiles.add(p);
+                    Toast.makeText(Verification.this, "Profile Saved successfull", Toast.LENGTH_SHORT).show();
+
+                }
+                else {
+
+                    Toast.makeText(Verification.this, "sorry !! something is wrong.", Toast.LENGTH_SHORT).show();
+
+                }
+
                 Intent i = new Intent(Verification.this, MainActivity.class);
                 i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(i);
-                }
-                else {
-                    Toast.makeText(Verification.this, "sorry !! wrong answer", Toast.LENGTH_SHORT).show();
-                }
             }
 
 

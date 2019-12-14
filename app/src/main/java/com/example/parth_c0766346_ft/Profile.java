@@ -1,9 +1,10 @@
 package com.example.parth_c0766346_ft;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class Profile {
+public class Profile implements Serializable {
 
     String name, email, phone;
     int imageNo;

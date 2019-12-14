@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.Random;
 
@@ -14,6 +15,7 @@ public class UserForm extends AppCompatActivity {
 
     EditText u_name, u_email, u_phone;
     Button saveBtn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,24 +29,29 @@ public class UserForm extends AppCompatActivity {
 
     }
 
-    public void saveUserdata(View v){
+    public void saveUserdata(View v) {
 
         Random rint = new Random();
 
 
-        Profile p = new Profile(u_name.getText().toString(), u_email.getText().toString(),
-                u_phone.getText().toString(),1 + rint.nextInt(30));
+        if (u_name.getText().toString() == "" || u_email.getText().toString() == "" || u_phone.getText().toString() == "") {
 
-        //Profile.AllProfiles.add(p);
+            Toast.makeText(this, "Please provide all the details", Toast.LENGTH_SHORT).show();
+
+        } else {
+
+            Profile p = new Profile(u_name.getText().toString(), u_email.getText().toString(),
+                    u_phone.getText().toString(), 1 + rint.nextInt(30));
+            Intent i = new Intent(this, Verification.class);
+
+            i.putExtra("object", p);
+
+            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(i);
 
 
-
-        Intent i = new Intent(this, Verification.class);
-        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(i);
+        }
 
 
     }
-
-
 }
