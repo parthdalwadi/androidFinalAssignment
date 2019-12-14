@@ -35,7 +35,9 @@ public class UserForm extends AppCompatActivity {
         Profile p = new Profile(u_name.getText().toString(), u_email.getText().toString(),
                 u_phone.getText().toString(),1 + rint.nextInt(30));
 
-        Profile.AllProfiles.add(p);
+        //Profile.AllProfiles.add(p);
+
+
 
         Intent i = new Intent(this, Verification.class);
         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

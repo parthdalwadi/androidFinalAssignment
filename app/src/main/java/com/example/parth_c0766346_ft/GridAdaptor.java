@@ -1,11 +1,14 @@
 package com.example.parth_c0766346_ft;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+
+import java.util.Random;
 
 public class GridAdaptor extends BaseAdapter {
 
@@ -39,8 +42,11 @@ public class GridAdaptor extends BaseAdapter {
         if(convertView == null){
             convertView = LayoutInflater.from(context).inflate(R.layout.layout_traffic, null);
 
+
+
             ImageView imageView = convertView.findViewById(R.id.trafficI);
-            imageView.setImageResource(allImages[position]);
+            imageView.setBackgroundResource(allImages[position]);
+
 
         }
 

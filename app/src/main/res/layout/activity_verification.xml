@@ -14,6 +14,7 @@
         android:layout_height="wrap_content"
         android:numColumns="3"
         android:id="@+id/grid"
+        android:layout_margin="20dp"
         android:layout_gravity="center" />
 
     <LinearLayout
@@ -24,6 +25,7 @@
     <ImageView
         android:layout_width="50dp"
         android:layout_height="50dp"
+        android:id="@+id/refresh"
         android:src="@drawable/refresh"/>
 
     <CheckBox
